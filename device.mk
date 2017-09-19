@@ -376,6 +376,13 @@ PRODUCT_PACKAGES += \
     context_hub.default \
     sensors.cheeseburger
 
+# SOTER (Fingerprint support for WeChat Payment)
+PRODUCT_PACKAGES += \
+    soter
+
+PRODUCT_BOOT_JARS += \
+    soter
+
 # Vehicle network (for slim_daemon)
 PRODUCT_PACKAGES += \
     libvehiclenetwork-native

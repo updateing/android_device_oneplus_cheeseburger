@@ -442,4 +442,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # Inherit from oneplus-common
-$(call inherit-product, device/oneplus/common/common.mk)
+#$(call inherit-product, device/oneplus/common/common.mk)

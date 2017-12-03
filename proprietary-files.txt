@@ -7,8 +7,6 @@ lib64/libteeclientjniv2.so
 
 # Audio
 etc/firmware/tfa98xx.cnt
-lib64/libstagefright_soft_flacdec.so
-lib/libstagefright_soft_flacdec.so
 
 # Audio ACDB
 vendor/etc/acdbdata/adsp_avs_config.acdb
@@ -21,26 +19,36 @@ vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 
 # Camera
+bin/mm-qcamera-daemon
+etc/camera/cp/CPCalibrationData.bin
+etc/camera/cp/SystemParamsFusion.bin
+etc/camera/cp/SystemParamsBokeh.bin
+etc/camera/cp/systemParams.bin
+etc/camera/attribute.model
+etc/camera/license.lic
+etc/camera/ashdr/iso617_4608x3456.ncf
+etc/camera/ashdr/ncf_pack.ncf
+lib/libmm-qcamera.so
+lib/libopposfr.so
+lib/libVDBlurlessAPI.so
+lib/libVDHDRAPI.so
+lib/libtrueportrait.so
+lib64/libtrueportrait.so
 vendor/etc/camera/camera_config.xml
 vendor/etc/camera/imx350_chromatix.xml
 vendor/etc/camera/imx371_chromatix.xml
 vendor/etc/camera/imx376k_chromatix.xml
 vendor/etc/camera/imx398_chromatix.xml
-bin/mm-qcamera-daemon
 vendor/lib/hw/camera.msm8998.so
 vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmjpeg_interface.so
-lib/libmm-qcamera.so
 vendor/lib/libmmlib2d_interface.so
-lib/libopposfr.so
 vendor/lib/libqomx_core.so
-lib/libVDBlurlessAPI.so
-lib/libVDHDRAPI.so
-lib64/libtrueportrait.so
-lib/libtrueportrait.so
 vendor/lib/libcamera_oneplus_bokeh_wrapper.so
 vendor/lib/libVDDualCameraBlurlessAPI.so
-vendor/lib/libarcsoft_dualcam_refocus.so
+vendor/lib/libarcsoft_dualcam_refocus_left.so
+vendor/lib/libarcsoft_dualcam_refocus_right.so
+vendor/lib/libarcsoft_dualcam_refocus_preview.so
 vendor/lib64/libcdsprpc.so
 vendor/lib/libcdsprpc.so
 vendor/lib/libchromaflash.so
@@ -124,9 +132,7 @@ vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libseemore.so
 vendor/lib64/libseemore.so
-vendor/lib/libst_disp.so
 vendor/lib/libStDualCam.so
-vendor/lib/libStereoblur.so
 vendor/lib/libSonyIMX350PdafLibrary.so
 vendor/lib/libSonyIMX371RmscLibrary.so
 vendor/lib/libubifocus.so
@@ -135,12 +141,7 @@ lib64/libfiltergenerator.so
 lib/libfiltergenerator.so
 vendor/lib/libdczoom.so
 vendor/lib/libcamera_cp_wrapper.so
-vendor/lib/libcamera_bokeh_wrapper.so
 vendor/lib/libcamera_cp_bokeh.so
-vendor/bin/hw/android.hardware.camera.provider@2.4-service
-vendor/etc/init/android.hardware.camera.provider@2.4-service.rc
-vendor/lib64/vendor.qti.hardware.camera.device@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.camera.device@1.0_vendor.so
 
 #5T ? camera
 vendor/lib/libmmcamera_imx376k_gt24c64_eeprom.so
@@ -164,7 +165,7 @@ vendor/lib/libchromatix_imx376k_postproc.so
 vendor/lib/libchromatix_imx376k_cpp_2592x1940_24fps_snapshot_bokeh.so
 vendor/lib/libchromatix_imx376k_isp_2592x1458_60fps_video.so
 
-#Camera app modules
+# Camera app modules
 lib64/libjni_optizoom.so
 lib64/libjni_trackingfocus.so
 lib64/libjni_chromaflash.so
@@ -177,7 +178,6 @@ lib64/libjni_dualcamera.so
 lib64/libjni_filtergenerator.so
 lib64/libjni_truescanner_v2.so
 lib64/libjni_seestraight.so
-lib64/libjni_pacprocessor.so
 lib64/libjni_stillmore.so
 lib64/libjni_trueportrait.so
 lib64/libjni_clearsight.so
@@ -254,7 +254,6 @@ vendor/lib/libscveObjectTracker_stub.so
 vendor/lib/libscveObjectSegmentation.so
 lib64/libblurbuster.so
 lib/libblurbuster.so
-
 
 # Camera actuators
 vendor/lib/libactuator_lc898217xc_imx376k.so
@@ -347,7 +346,6 @@ vendor/lib/libchromatix_imx398_cpp_4656x2608_30fps_preview.so
 
 # Camera postprocessing
 lib/lib_oneplus_facebeauty.so
-lib/lib_oneplus_md.so
 lib/lib_oneplus_watermark.so
 lib/libmms_gyro_vstab_auth.so
 lib/libmms_gyro_vstab.so
@@ -444,6 +442,16 @@ framework/vendor.qti.hardware.fingerprint-V1.0-java.jar
 etc/permissions/com.fingerprints.extension.xml
 framework/com.fingerprints.extension.jar
 
+# Graphics firmware
+vendor/firmware/a530_pfp.fw
+vendor/firmware/a530_pm4.fw
+vendor/firmware/a540_gpmu.fw2
+vendor/firmware/a540_zap.b00
+vendor/firmware/a540_zap.b01
+vendor/firmware/a540_zap.b02
+vendor/firmware/a540_zap.elf
+vendor/firmware/a540_zap.mdt
+
 # IPA
 vendor/bin/ipacm-diag
 vendor/firmware/ipa_fws.mdt
@@ -454,7 +462,7 @@ vendor/firmware/ipa_fws.b03
 vendor/firmware/ipa_fws.b02
 vendor/firmware/ipa_fws.elf
 
-#LEIA
+# LEIA
 vendor/firmware/leia_pm4_470.fw
 vendor/firmware/leia_pfp_470.fw
 
@@ -464,42 +472,14 @@ vendor/firmware/libpn553_fw.so
 # Radio - factory
 lib64/libparam.so
 
-#firmware
-vendor/firmware/a225p5_pm4.fw
-vendor/firmware/a225_pfp.fw
-vendor/firmware/a225_pm4.fw
-vendor/firmware/a300_pfp.fw
-vendor/firmware/a300_pm4.fw
-vendor/firmware/a330_pfp.fw
-vendor/firmware/a330_pm4.fw
-vendor/firmware/a420_pfp.fw
-vendor/firmware/a420_pm4.fw
-vendor/firmware/a530_gpmu.fw2
-vendor/firmware/a530_pfp.fw
-vendor/firmware/a530_pm4.fw
-vendor/firmware/a530v1_pfp.fw
-vendor/firmware/a530v1_pm4.fw
-vendor/firmware/a530v2_seq.fw2
-vendor/firmware/a530v3_gpmu.fw2
-vendor/firmware/a530v3_seq.fw2
-vendor/firmware/a530_zap.b00
-vendor/firmware/a530_zap.b01
-vendor/firmware/a530_zap.b02
-vendor/firmware/a530_zap.elf
-vendor/firmware/a530_zap.mdt
-vendor/firmware/a540_gpmu.fw2
-vendor/firmware/a540_zap.b00
-vendor/firmware/a540_zap.b01
-vendor/firmware/a540_zap.b02
-vendor/firmware/a540_zap.elf
-vendor/firmware/a540_zap.mdt
-
-#Misc
+# OpenMobile
 etc/permissions/org.simalliance.openmobileapi.xml
 -framework/org.simalliance.openmobileapi.jar
-bin/ifaadaemon
+-priv-app/SmartcardService/SmartcardService.apk
 
-#Sensors
+# Sensors
+vendor/etc/sensors/hals.conf
+vendor/etc/sensors/sensor_def_qcomdev.conf
 lib64/sensors.hal.tof.so
 lib/sensors.hal.tof.so
 vendor/lib64/sensor_calibrate.so
@@ -508,28 +488,12 @@ vendor/lib/sensor_calibrate.so
 vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 vendor/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 
-
 # Touchscreen Firmware
 etc/firmware/tp/fw_synaptics_16859.img
 
-#openmobile
--priv-app/SmartcardService/SmartcardService.apk
-
-#firmwares
-etc/camera/cp/CPCalibrationData.bin
-etc/camera/cp/SystemParamsFusion.bin
-etc/camera/cp/SystemParamsBokeh.bin
-etc/camera/cp/systemParams.bin
-etc/camera/attribute.model
-etc/camera/license.lic
-etc/camera/ashdr/iso617_4608x3456.ncf
-etc/camera/ashdr/ncf_pack.ncf
-
-
-#qvop
+# Voice fingerprint
 vendor/bin/qvop-daemon
 vendor/etc/qvop/antispoofing.bin
 vendor/etc/qvop/cmudict.bin
 vendor/etc/qvop/noisesample.bin
 vendor/etc/qvop/poc_64_hmm.gmm
-

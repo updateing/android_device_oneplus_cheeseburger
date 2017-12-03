@@ -118,12 +118,12 @@ vendor/lib/libcneoplookup.so
 lib64/libvendorconn.so
 lib/libvendorconn.so
 
-
 # DPM
 etc/init/dpmd.rc
 bin/dpmd
 etc/dpm/dpm.conf
 etc/dpm/nsrm/NsrmConfiguration.xml
+etc/permissions/dpmapi.xml
 framework/com.qti.dpmframework.jar
 framework/dpmapi.jar
 framework/tcmclient.jar
@@ -180,8 +180,6 @@ vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib/libQTEEConnector_vendor.so
 lib/libQTEEConnector_system.so
 
-
-
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8998.so
 vendor/lib64/hw/gatekeeper.msm8998.so
@@ -194,14 +192,11 @@ vendor/lib/libkeymasterutils.so
 vendor/lib/libkeymasterprovision.so
 vendor/lib/libkeymasterdeviceutils.so
 
-
 # GPS
 -vendor/lib/libloc_api_v02.so
-vendor/lib/libloc_core.so
 vendor/lib/libloc_ds_api.so
 vendor/lib/libloc_externalDr.so
 vendor/lib64/libloc_api_v02.so
-vendor/lib64/libloc_core.so
 vendor/lib64/libloc_ds_api.so
 vendor/lib64/libloc_externalDr.so
 vendor/lib64/liblocationservice.so
@@ -450,6 +445,7 @@ lib/libdiag_system.so
 vendor/etc/data/netmgr_config.xml
 vendor/etc/data/dsi_config.xml
 vendor/bin/netmgrd
+vendor/bin/port-bridge
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
 framework/embmslibrary.jar
@@ -575,12 +571,13 @@ vendor/lib64/libsns_low_lat_stream_stub.so
 vendor/lib/libsns_low_lat_stream_stub.so
 lib/libsns_low_lat_stream_stub.so
 
-
 # Thermal
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
+vendor/lib/hw/thermal.msm8998.so
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
+vendor/lib64/hw/thermal.msm8998.so
 
 # Time services
 -vendor/app/TimeService/TimeService.apk
@@ -600,19 +597,17 @@ vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 
-
-#PLAYready
+# PlayReady DRM
 vendor/lib/qcdrm/playready/lib/drm/libdrmprplugin_customer.so
 vendor/lib/qcdrm/playready/lib/libprdrmdecrypt_customer.so
 vendor/lib/qcdrm/playready/lib/libtzplayready_customer.so
 vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmdecrypt_customer.so
 vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so
 
-
 # Wi-Fi
 vendor/bin/cnss-daemon
 
-#vr
+# VR
 lib64/libvraudio_client.so
 lib64/libvr_object_engine.so
 lib64/libvr_amb_engine.so
@@ -623,11 +618,10 @@ lib/libvr_object_engine.so
 lib/libvr_amb_engine.so
 lib/libvr_sam_wrapper.so
 lib/libvraudio.so
+vendor/lib/hw/vr.msm8998.so
+vendor/lib64/hw/vr.msm8998.so
 
-#NFC
-vendor/firmware/libpn553_fw.so
-
-#QVR
+# QVR
 bin/qvrservice
 bin/qvrservicetest
 bin/qvrservicetest64
@@ -649,12 +643,10 @@ vendor/etc/qvr/qvrservice_6dof_config_stereo.xml
 vendor/etc/qvr/qvrservice_config.txt
 bin/qvrcameratseq
 
-
-#firmwares
+# Firmwares
 vendor/etc/diracvdd.bin
 
-
-#Hidl
+# HIDL
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
 lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 lib64/com.qualcomm.qti.wifidisplayhal@1.0.so
@@ -735,44 +727,10 @@ lib/vendor.qti.hardware.iop@1.0.so
 lib/vendor.qti.esepowermanager@1.0.so
 lib/vendor.qti.hardware.perf@1.0.so
 
-#tui
+# TUI
 lib64/vendor.qti.hardware.tui_comm@1.0.so
+lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-lib/vendor.qti.hardware.tui_comm@1.0.so
-
-
-#hbtp
-#lib64/libhbtpjni.so
-#vendor/lib64/libhbtpfrmwk.so
-#vendor/lib64/libhbtpdsp.so
-#vendor/lib64/libhbtpclient.so
-#vendor/lib/libhbtpfrmwk.so
-#vendor/lib/libhbtpdsp.so
-#vendor/lib/libhbtpclient.so
-#vendor/bin/hbtp_daemon
-#vendor/lib64/libfastrpc_utf_stub.so
-#vendor/lib/libfastrpc_utf_stub.so
-#lib/libhbtpjni.so
-#lib64/vendor.qti.hardware.improvetouch.gesturemanager@1.0.so
-#lib64/vendor.qti.hardware.improvetouch.blobmanager@1.0.so
-#lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0.so
-#vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
-#vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0_vendor.so
-#vendor/lib64/vendor.qti.hardware.improvetouch.gesturemanager@1.0-service.so
-#vendor/lib64/vendor.qti.hardware.improvetouch.blobmanager@1.0_vendor.so
-#vendor/lib64/vendor.qti.hardware.improvetouch.gesturemanager@1.0_vendor.so
-#vendor/lib64/vendor.qti.hardware.improvetouch.blobmanager@1.0-service.so
-#vendor/lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
-#vendor/lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0_vendor.so
-#vendor/lib/vendor.qti.hardware.improvetouch.gesturemanager@1.0-service.so
-#vendor/lib/vendor.qti.hardware.improvetouch.blobmanager@1.0_vendor.so
-#vendor/lib/vendor.qti.hardware.improvetouch.gesturemanager@1.0_vendor.so
-#vendor/lib/vendor.qti.hardware.improvetouch.blobmanager@1.0-service.so
-#lib/vendor.qti.hardware.improvetouch.gesturemanager@1.0.so
-#lib/vendor.qti.hardware.improvetouch.blobmanager@1.0.so
-#lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0.so
-
-

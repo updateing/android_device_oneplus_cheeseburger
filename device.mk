@@ -24,6 +24,9 @@
 
 $(call inherit-product, vendor/oneplus/cheeseburger/cheeseburger-vendor.mk)
 
+# QCOM build macros
+$(call inherit-product, device/oneplus/cheeseburger/utils.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-mokee
@@ -149,13 +152,13 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 # ANT+
-PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant.antradio_library \
-    libantradio
+#PRODUCT_PACKAGES += \
+#    AntHalService \
+#    com.dsi.ant.antradio_library \
+#    libantradio
 
-PRODUCT_COPY_FILES += \
-    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
+#PRODUCT_COPY_FILES += \
+#    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -207,8 +210,8 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0_vendor
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
+#PRODUCT_PACKAGES += \
+#    OneplusDoze
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \

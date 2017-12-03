@@ -29,6 +29,9 @@ PLATFORM_PATH := device/oneplus/cheeseburger
 
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
+# Use kernel headers
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+
 # Assertions
 TARGET_BOARD_INFO_FILE := $(PLATFORM_PATH)/board-info.txt
 TARGET_OTA_ASSERT_DEVICE := OnePlus5,cheeseburger
@@ -143,7 +146,6 @@ DTS_CODEC_M_ := false
 
 AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 
-USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
@@ -244,7 +246,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/recovery.fstab
-TARGET_RECOVERY_UI_LIB := librecovery_ui_msm
+#TARGET_RECOVERY_UI_LIB := librecovery_ui_msm
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 
@@ -256,8 +258,8 @@ TARGET_RIL_VARIANT := caf
 TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
+#include device/qcom/sepolicy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true

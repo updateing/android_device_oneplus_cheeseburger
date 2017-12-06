@@ -383,7 +383,8 @@ PRODUCT_PACKAGES += \
     libshims_rilqc \
     librmnetctl \
     libxml2 \
-    libprotobuf-cpp-full
+    libprotobuf-cpp-full \
+    libandroid_net
 
 PRODUCT_BOOT_JARS += \
     qcnvitems \

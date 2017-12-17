@@ -171,6 +171,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@3.2-impl \
     libshim_camera \
+    vendor.qti.hardware.camera.device@1.0_vendor \
     Snap
 
 PRODUCT_COPY_FILES += \

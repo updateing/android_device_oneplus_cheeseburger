@@ -123,6 +123,7 @@ etc/init/dpmd.rc
 bin/dpmd
 etc/dpm/dpm.conf
 etc/dpm/nsrm/NsrmConfiguration.xml
+etc/permissions/com.qti.dpmframework.xml
 etc/permissions/dpmapi.xml
 framework/com.qti.dpmframework.jar
 framework/dpmapi.jar
@@ -208,6 +209,7 @@ vendor/bin/slim_daemon
 vendor/bin/xtwifi-inet-agent
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
+etc/permissions/com.qti.location.sdk.xml
 framework/com.qti.location.sdk.jar
 framework/izat.xt.srv.jar
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk

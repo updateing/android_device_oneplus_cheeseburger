@@ -257,6 +257,10 @@ PRODUCT_PACKAGES += \
     android.hardware.health@1.0-impl \
     android.hardware.health@1.0-service
 
+# HIDL, dirty hack
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0
+
 # IFAA (Fingerprint support for Alipay)
 PRODUCT_PACKAGES += \
     org.ifaa.android.manager
